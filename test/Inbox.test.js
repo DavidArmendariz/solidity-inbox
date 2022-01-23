@@ -25,4 +25,9 @@ describe('Inbox', () => {
   it('deploys a contract', () => {
     expect(inbox.options.address).toBeDefined();
   });
+
+  it('has a default message', async () => {
+    const message = await inbox.methods.message().call();
+    expect(message).toEqual('Hello World!');
+  });
 });
