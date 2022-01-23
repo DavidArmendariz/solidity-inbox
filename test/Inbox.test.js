@@ -23,6 +23,6 @@ beforeEach(async () => {
 
 describe('Inbox', () => {
   it('deploys a contract', () => {
-    console.log(inbox);
+    expect(inbox.options.address).toBeDefined();
   });
 });
