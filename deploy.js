@@ -13,8 +13,8 @@ const deploy = async () => {
   try {
     const accounts = await web3.eth.getAccounts();
     console.log(`Deploying from account: ${accounts[0]}`);
-    const result = await new web3.eth.Contract(JSON.parse(Inbox.interface))
-      .deploy({ data: Inbox.bytecode, arguments: ['Hello World!'] })
+    const result = await new web3.eth.Contract(Inbox.abi)
+      .deploy({ data: Inbox.evm.bytecode.object, arguments: ['Hello World!'] })
       .send({ gas: 1000000, from: accounts[0] });
     console.log(`Contract Address: ${result.options.address}`);
   } catch (err) {
