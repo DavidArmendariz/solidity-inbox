@@ -1,12 +1,17 @@
 # Solidity Inbox
 
-Very simple project: a smart contract to set and retrieve a string.
+This is a very simple project: a smart contract to set and retrieve a string. It uses Infura API to connect to the Rinkeby test network to deploy the contract.
 
 # Quickstart
 
 ```shell
 nvm use
 npm install
-npm test
 npx babel-node deploy.js
+```
+
+## Tests
+
+```shell
+npm test
 ```
